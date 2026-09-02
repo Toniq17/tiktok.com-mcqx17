@@ -29,6 +29,15 @@ document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
 document.querySelectorAll('.year').forEach(el=>el.textContent=new Date().getFullYear());
 
+// Snapchat social link
+const contactCopy=document.querySelector('.contact-copy');
+if(contactCopy && !document.querySelector('.social-links')){
+  const social=document.createElement('div');
+  social.className='social-links buttons';
+  social.innerHTML='<a class="btn secondary" href="https://www.snapchat.com/add/toni20239171?share_id=4ALpOQ16YLk&locale=en-GB" target="_blank" rel="noopener noreferrer" aria-label="Open Snapchat profile">👻 Snapchat</a>';
+  contactCopy.appendChild(social);
+}
+
 const form=document.querySelector('#contactForm');
 const note=document.querySelector('#formNote');
 form?.addEventListener('submit',e=>{
