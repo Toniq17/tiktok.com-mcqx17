@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://toniq17.github.io/tiktok.com-mcqx17/sitemap.xml
