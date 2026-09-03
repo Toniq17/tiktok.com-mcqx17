@@ -29,6 +29,19 @@ document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
 document.querySelectorAll('.year').forEach(el=>el.textContent=new Date().getFullYear());
 
+// Display name
+const displayName='MOHAMETT UPDY QANI';
+document.querySelectorAll('*').forEach(el=>{
+  el.childNodes.forEach(node=>{
+    if(node.nodeType===Node.TEXT_NODE){
+      node.textContent=node.textContent.replaceAll('Tooni17',displayName).replaceAll('Tooni',displayName);
+    }
+  });
+});
+document.title=`${displayName} — Digital Creator`;
+document.querySelector('meta[name="description"]')?.setAttribute('content',`${displayName} — Digital Creator and Web Developer portfolio.`);
+document.querySelector('meta[property="og:title"]')?.setAttribute('content',`${displayName} — Digital Creator`);
+
 // Snapchat social link
 const contactCopy=document.querySelector('.contact-copy');
 if(contactCopy && !document.querySelector('.social-links')){
@@ -45,7 +58,7 @@ form?.addEventListener('submit',e=>{
   const name=form.elements.name.value.trim();
   const message=form.elements.message.value.trim();
   const subject=encodeURIComponent(`Portfolio message from ${name}`);
-  const body=encodeURIComponent(`Hi Tooni17,\n\n${message}\n\n— ${name}`);
+  const body=encodeURIComponent(`Hi ${displayName},\n\n${message}\n\n— ${name}`);
   window.location.href=`mailto:hello@tooni17.com?subject=${subject}&body=${body}`;
   if(note)note.textContent='Opening your email app…';
 });
